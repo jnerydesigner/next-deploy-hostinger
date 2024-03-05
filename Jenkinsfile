@@ -2,12 +2,14 @@ pipeline {
     agent any
     
     stages {
-        stage('Build') {            
+        stage('Node Verifield') {            
             steps {
                 script{
                     sh 'node -v'                
                 }
             }
+        }
+        stage('Build') {            
             steps {
                 script{
                     sh 'npm run build'                
