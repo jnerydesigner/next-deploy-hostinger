@@ -2,20 +2,14 @@ pipeline {
     agent any
     
     stages {
-        stage('Node Verifield') {            
+        stage('Pm2 Status') {            
             steps {
                 script{
-                    sh 'node -v'                
+                    sh 'pm2 status'                
                 }
             }
         }
-        stage('Build') {            
-            steps {
-                script{
-                    sh 'npx next build'                
-                }
-            }
-        }
+      
         stage('Test') {
             steps {
                 // Aqui você pode colocar comandos para executar testes
