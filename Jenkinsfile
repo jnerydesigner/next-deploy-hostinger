@@ -2,7 +2,12 @@ pipeline {
     agent any
     
     stages {
-        stage('Build') {
+        stage('Build') {            
+            steps {
+                script{
+                    sh 'node -v'                
+                }
+            }
             steps {
                 script{
                     sh 'npm run build'                
