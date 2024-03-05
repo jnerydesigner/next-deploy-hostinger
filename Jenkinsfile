@@ -9,6 +9,13 @@ pipeline {
                 }
             }
         }
+        stage('Npm Verifield') {            
+            steps {
+                script{
+                    sh 'npm -v'                
+                }
+            }
+        }
         stage('Build') {            
             steps {
                 script{
