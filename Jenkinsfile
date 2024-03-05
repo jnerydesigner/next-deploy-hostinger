@@ -4,8 +4,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // Aqui você pode colocar comandos para construir seu projeto
-                sh 'echo "Construindo o projeto..."'
+                script{
+                    sh 'npm run build'                
+                }
             }
         }
         stage('Test') {
