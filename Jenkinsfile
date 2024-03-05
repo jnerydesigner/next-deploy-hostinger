@@ -8,6 +8,13 @@ pipeline {
                     sh 'node -v'                
                 }
             }
+        }  
+        stage('Npm Status') {            
+            steps {
+                script{
+                    sh 'npm -v'                
+                }
+            }
         }      
         stage('Test') {
             steps {
