@@ -2,14 +2,13 @@ pipeline {
     agent any
     
     stages {
-        stage('Pm2 Status') {            
+        stage('Node Status') {            
             steps {
                 script{
-                    sh 'pm2 status'                
+                    sh 'node -v'                
                 }
             }
-        }
-      
+        }      
         stage('Test') {
             steps {
                 // Aqui você pode colocar comandos para executar testes
