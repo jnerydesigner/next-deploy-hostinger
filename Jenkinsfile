@@ -2,17 +2,24 @@ pipeline {
     agent any
     
     stages {
+        stage('Node Search Curl') {            
+            steps {
+                script{
+                    sh 'curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -'                
+                }
+            }
+        }
+        stage('Node Install Nodejs') {            
+            steps {
+                script{
+                    sh 'sudo apt-get install -y nodejs'                
+                }
+            }
+        }
         stage('Node Verifield') {            
             steps {
                 script{
                     sh 'node -v'                
-                }
-            }
-        }
-        stage('Npm Verifield') {            
-            steps {
-                script{
-                    sh 'npm -v'                
                 }
             }
         }
